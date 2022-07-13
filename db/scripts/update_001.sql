@@ -1,14 +1,17 @@
 CREATE TABLE engines(
-    id SERIAL PRIMARY KEY
+    id SERIAL PRIMARY KEY,
+    name TEXT
 );
 
 CREATE TABLE cars(
     id SERIAL PRIMARY KEY,
+    name TEXT,
     engine_id INT NOT NULL UNIQUE REFERENCES engines(id)
 );
 
 CREATE TABLE drivers(
-    id SERIAL PRIMARY KEY
+    id SERIAL PRIMARY KEY,
+    name TEXT
 );
 
 CREATE TABLE history_owner(
