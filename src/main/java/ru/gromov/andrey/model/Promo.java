@@ -10,8 +10,6 @@ public class Promo {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String description;
-    private String carBrand;
-    private String carBody;
     private byte[] photo;
     private boolean status;
 
@@ -36,22 +34,6 @@ public class Promo {
 
     public void setDescription(String description) {
         this.description = description;
-    }
-
-    public String getCarBrand() {
-        return carBrand;
-    }
-
-    public void setCarBrand(String carBrand) {
-        this.carBrand = carBrand;
-    }
-
-    public String getCarBody() {
-        return carBody;
-    }
-
-    public void setCarBody(String carBody) {
-        this.carBody = carBody;
     }
 
     public byte[] getPhoto() {

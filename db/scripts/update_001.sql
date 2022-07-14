@@ -6,6 +6,8 @@ CREATE TABLE engines(
 CREATE TABLE cars(
     id SERIAL PRIMARY KEY,
     name VARCHAR ,
+    carBrand VARCHAR,
+    carBody VARCHAR,
     engine_id INT NOT NULL UNIQUE REFERENCES engines(id)
 );
 
@@ -28,8 +30,6 @@ CREATE TABLE users(
 CREATE TABLE promos(
     id SERIAL PRIMARY KEY,
     description TEXT,
-    carBrand VARCHAR,
-    carBody VARCHAR,
     photo BYTEA,
     status BOOLEAN,
     user_id INT NOT NULL REFERENCES users(id)
