@@ -1,6 +1,7 @@
 package ru.gromov.andrey.model;
 
 import javax.persistence.*;
+import java.util.Objects;
 
 @Entity
 @Table(name = "engines")
@@ -12,6 +13,12 @@ public class Engine {
     private String name;
 
     public Engine() {
+    }
+
+    public static Engine of(String name) {
+        Engine engine = new Engine();
+        engine.name = name;
+        return engine;
     }
 
     public int getId() {
@@ -28,5 +35,30 @@ public class Engine {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        Engine engine = (Engine) o;
+        return id == engine.id;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
+    }
+
+    @Override
+    public String toString() {
+        return "Engine{"
+               + "id=" + id
+               + ", name='" + name + '\''
+               + '}';
     }
 }

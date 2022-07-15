@@ -20,5 +20,7 @@
         <mapping class="ru.gromov.andrey.model.Car" />
         <mapping class="ru.gromov.andrey.model.Engine" />
         <mapping class="ru.gromov.andrey.model.Driver" />
+        <mapping class="ru.gromov.andrey.model.User" />
+        <mapping class="ru.gromov.andrey.model.Promo" />
     </session-factory>
 </hibernate-configuration>

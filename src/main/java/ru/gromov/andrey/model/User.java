@@ -1,6 +1,7 @@
 package ru.gromov.andrey.model;
 
 import javax.persistence.*;
+import java.util.Objects;
 
 @Entity
 @Table(name = "users")
@@ -12,6 +13,12 @@ public class User {
     private String name;
 
     public User() {
+    }
+
+    public static User of(String name) {
+        User user = new User();
+        user.name = name;
+        return user;
     }
 
     public int getId() {
@@ -28,5 +35,30 @@ public class User {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        User user = (User) o;
+        return id == user.id;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
+    }
+
+    @Override
+    public String toString() {
+        return "User{"
+               + "id=" + id
+               + ", name='" + name + '\''
+               + '}';
     }
 }
