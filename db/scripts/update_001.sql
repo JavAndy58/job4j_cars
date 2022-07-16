@@ -32,6 +32,7 @@ CREATE TABLE promos(
     description TEXT,
     photo BYTEA,
     status BOOLEAN,
+    created TIMESTAMP,
     user_id INT NOT NULL REFERENCES users(id)
 );
 
